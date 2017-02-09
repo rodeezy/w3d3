@@ -18,4 +18,8 @@ class TagTopic < ActiveRecord::Base
     class_name: "ShortenedUrl"
   )
 
+  def popular_links
+    url.all.order(:visits).limit(5)
+  end
+
 end
